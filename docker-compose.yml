@@ -1,7 +1,10 @@
-version: "3.9"
+version: "3.8"
 services:
   backend:
-    build: .
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: anyware-backend
     ports:
       - "5000:5000"
     environment:
@@ -15,5 +18,16 @@ services:
       - "27017:27017"
     volumes:
       - mongo-data:/data/db
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_API_URL: 'http://localhost:5000/api'
+    container_name: anyware-frontend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - backend
 volumes:
   mongo-data:

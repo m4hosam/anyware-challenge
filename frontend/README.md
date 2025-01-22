@@ -1,50 +1,131 @@
-# React + TypeScript + Vite
+# Learning Management System Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern learning management system built with React, TypeScript, and Material-UI. This application provides features for managing educational content, announcements, and quizzes.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🔐 Authentication system with protected routes
+- 📱 Responsive design with Material-UI
+- 📢 Announcements dashboard with real-time updates
+- 📝 Quiz management system
+- 🎯 Course-specific content organization
+- 🔄 Redux state management
+- 🚀 TypeScript for type safety
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Node.js (v16 or higher)
+- npm or yarn
+- Docker (optional, for containerization)
 
-- Configure the top-level `parserOptions` property like this:
+## Installation
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. Clone the repository:
+
+```bash
+git clone https://github.com/m4hosam/anyware-challenge/
+cd frontend
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Install dependencies:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm install
 ```
+
+3. Create a `.env` file in the root directory and add the API endpoint to the backend:
+
+```env
+VITE_API_BASE_URL=http://localhost:5000/api
+```
+
+4. Start the development server:
+
+```bash
+npm run dev
+```
+
+## Building for Production
+
+```bash
+npm run build
+```
+
+## Docker Deployment
+
+1. Build the Docker image:
+
+```bash
+docker build -t lms-frontend .
+```
+
+2. Run the container:
+
+```bash
+docker run -p 80:80 lms-frontend
+```
+
+## Project Structure
+
+```
+src/
+├── services/api  # API integration
+├── components/   # React components
+│   ├── Auth/     # Authentication components
+│   ├── Layout/   # Layout components like Header
+│   ├── Announcements/
+│   └── Quizzes/
+├── store/        # Redux store
+│   └── slices/   # Redux slices
+├── types/        # TypeScript types
+```
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+- `npm run type-check` - Run TypeScript type checking
+
+## Technologies Used
+
+- React 18
+- TypeScript
+- Material-UI
+- Redux Toolkit
+- React Router v6
+- Vite
+- date-fns
+- Axios
+
+## API Integration
+
+The application connects to a backend API with the following endpoints:
+
+- `GET /api/announcements` - Fetch announcements
+- `GET /api/quizzes` - Fetch quizzes
+
+## Authentication
+
+The application uses a simple authentication system for demonstration purposes. In a production environment, you should implement proper authentication with JWT tokens or similar.
+
+## Component Documentation
+
+### Protected Routes
+
+```typescript
+// Usage example
+import { requireAuth } from "../Auth/requireAuth";
+
+const ProtectedComponent = requireAuth(YourComponent);
+```
+
+### Layout Components
+
+The application uses a responsive drawer layout from Material-UI with:
+
+- Collapsible sidebar
+- Responsive design
+- Protected routes
+- Authentication state management
