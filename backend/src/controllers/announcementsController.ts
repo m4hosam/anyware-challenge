@@ -49,9 +49,9 @@ export async function addAnnouncement(
   res: Response
 ): Promise<void> {
   try {
-    const { user, content, date } = req.body;
+    const { user, content, date, course } = req.body;
 
-    if (!user?.name || !content) {
+    if (!user?.name || !content || !course) {
       res.status(400).json({
         message: "All required fields must be provided (user.name, content)",
       });
@@ -74,6 +74,7 @@ export async function addAnnouncement(
       user,
       content,
       date: date || new Date(),
+      course,
     });
 
     await newAnnouncement.save();

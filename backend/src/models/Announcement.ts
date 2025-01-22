@@ -10,6 +10,7 @@ export interface IAnnouncement extends Document {
   user: IUser;
   date: Date;
   content: string;
+  course: string;
 }
 
 // Schema definition for the Announcement model
@@ -20,6 +21,7 @@ const AnnouncementSchema: Schema = new Schema({
   },
   date: { type: Date, required: true, default: Date.now },
   content: { type: String, required: true },
+  course: { type: String, required: true },
 });
 
 // Export the model
