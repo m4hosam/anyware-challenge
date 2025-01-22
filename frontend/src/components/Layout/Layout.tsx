@@ -9,15 +9,32 @@ import {
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Footer from "./Footer";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../../store/slices/authSlice";
+import { RootState } from "../../store/store";
+
+// Add to existing imports in Layout.tsx
+import Button from "@mui/material/Button";
 
 const drawerWidth = 240;
 
 export default function Layout() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [isClosing, setIsClosing] = React.useState(false);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const isAuthenticated = useSelector(
+    (state: RootState) => state.auth.isAuthenticated
+  );
+
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate("/");
+  };
 
   const handleDrawerClose = () => {
     setIsClosing(true);
@@ -57,6 +74,11 @@ export default function Layout() {
           <Typography variant="h6" noWrap component="div">
             Learning Management System
           </Typography>
+          {isAuthenticated && (
+            <Button color="inherit" onClick={handleLogout} sx={{ ml: "auto" }}>
+              Logout
+            </Button>
+          )}
         </Toolbar>
       </AppBar>
 

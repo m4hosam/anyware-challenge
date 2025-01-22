@@ -13,7 +13,7 @@ import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   const menuItems = [
-    { text: "Dashboard", path: "/", icon: <DashboardIcon /> },
+    { text: "Dashboard", path: "/dashboard", icon: <DashboardIcon /> },
     {
       text: "Announcements",
       path: "/announcements",

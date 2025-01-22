@@ -1,10 +1,11 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
 import Layout from "./components/Layout/Layout";
-import Dashboard from "./components/Dashboard";
-import Announcements from "./components/Announcements/Announcements";
-import Quizzes from "./components/Quizzes/Quizzes";
+import Home from "./components/Home";
+import ProtectedDashboard from "./components/ProtectedDashboard";
+import ProtectedAnnouncements from "./components/Announcements/ProtectedAnnouncements";
+import ProtectedQuizzes from "./components/Quizzes/ProtectedQuizzes";
 import "./App.css";
 
 const App = () => {
@@ -12,11 +13,13 @@ const App = () => {
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/" element={<Layout />}>
-            <Route index element={<Dashboard />} />
-            <Route path="announcements" element={<Announcements />} />
-            <Route path="quizzes" element={<Quizzes />} />
+            <Route path="dashboard" element={<ProtectedDashboard />} />
+            <Route path="announcements" element={<ProtectedAnnouncements />} />
+            <Route path="quizzes" element={<ProtectedQuizzes />} />
           </Route>
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>
     </Provider>
