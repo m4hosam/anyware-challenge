@@ -1,17 +1,21 @@
+import React, { Suspense } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
 import Layout from "./components/Layout/Layout";
 import Home from "./components/Home";
-import ProtectedDashboard from "./components/ProtectedDashboard";
-import ProtectedAnnouncements from "./components/Announcements/ProtectedAnnouncements";
-import ProtectedQuizzes from "./components/Quizzes/ProtectedQuizzes";
+import Announcements from "./components/Announcements/Announcements";
+import Quizzes from "./components/Quizzes/Quizzes";
+import Dashboard from "./components/Dashboard";
+import { requireAuth } from "./components/Auth/requireAuth";
 import "./App.css";
-import React, { Suspense } from "react";
 import { I18nextProvider } from "react-i18next";
 import i18n from "./i18n";
 
 const App = () => {
+  const ProtectedDashboard = requireAuth(Dashboard);
+  const ProtectedAnnouncements = requireAuth(Announcements);
+  const ProtectedQuizzes = requireAuth(Quizzes);
   return (
     <I18nextProvider i18n={i18n}>
       <Suspense fallback={<div>Loading...</div>}>

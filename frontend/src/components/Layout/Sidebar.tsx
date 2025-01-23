@@ -10,16 +10,26 @@ import DashboardIcon from "@mui/icons-material/Dashboard";
 import AnnouncementIcon from "@mui/icons-material/Announcement";
 import QuizIcon from "@mui/icons-material/Quiz";
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Sidebar = () => {
+  const { t } = useTranslation(["common", "home"]);
   const menuItems = [
-    { text: "Dashboard", path: "/dashboard", icon: <DashboardIcon /> },
     {
-      text: "Announcements",
+      text: t("common:dashboard"),
+      path: "/dashboard",
+      icon: <DashboardIcon />,
+    },
+    {
+      text: t("common:announcements"),
       path: "/announcements",
       icon: <AnnouncementIcon />,
     },
-    { text: "Quizzes", path: "/quizzes", icon: <QuizIcon /> },
+    {
+      text: t("common:quizzes"),
+      path: "/quizzes",
+      icon: <QuizIcon />,
+    },
   ];
 
   return (
@@ -39,9 +49,9 @@ const Sidebar = () => {
                 },
                 "&.active": {
                   backgroundColor: "white",
-                  color: "black",
+                  color: "#0f3040",
                   "& .MuiListItemIcon-root": {
-                    color: "black",
+                    color: "#0f3040",
                   },
                   "& .MuiListItemText-primary": {
                     fontWeight: "bold",

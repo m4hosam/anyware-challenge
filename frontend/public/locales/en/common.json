@@ -1,9 +1,14 @@
 {
-    "appName": "Learning Management System",
-    "login": "Login",
-    "logout": "Logout",
-    "welcome": "Welcome to LMS",
-    "dashboard": "Dashboard",
-    "announcements": "Announcements",
-    "quizzes": "Quizzes"
-  }
+  "appName": "Learning Management System",
+  "login": "Login",
+  "logout": "Logout",
+  "welcome": "Welcome to Learning",
+  "login note": "Please log in to access the dashboard",
+  "dashboard": "Dashboard",
+  "announcements": "Announcements",
+  "quizzes": "Quizzes",
+  "quiz": "Quiz",
+  "available": "Available",
+  "upcoming quizzes": "Upcoming Quizzes",
+  "start quiz": "Start Quiz"
+}

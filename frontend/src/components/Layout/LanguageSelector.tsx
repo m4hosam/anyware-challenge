@@ -29,7 +29,7 @@ const LanguageSelector = () => {
         aria-haspopup="true"
         onClick={handleMenu}
         color="inherit"
-        sx={{ ml: "auto" }}
+        sx={{ ml: "auto", mr: 3 }}
       >
         <LanguageIcon />
       </IconButton>

@@ -4,8 +4,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { RootState, AppDispatch } from "../../store/store";
 import { getQuizzes } from "../../store/slices/quizSlice";
 import QuizCard from "./QuizCard";
+import { useTranslation } from "react-i18next";
 
 const Quizzes = () => {
+  const { t } = useTranslation(["common", "home"]);
+
   const dispatch = useDispatch<AppDispatch>();
   const { quizzes, loading, error } = useSelector(
     (state: RootState) => state.quizzes
@@ -57,7 +60,7 @@ const Quizzes = () => {
             color: "text.primary",
           }}
         >
-          Quizzes
+          {t("quizzes")}
         </Typography>
         <Typography color="text.secondary">
           {quizzes.length} {quizzes.length === 1 ? "quiz" : "quizzes"} available

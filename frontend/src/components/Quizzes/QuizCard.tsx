@@ -9,13 +9,13 @@ import {
 } from "@mui/material";
 import { Quiz } from "../../types/types";
 import { format } from "date-fns";
-import { Book } from "@mui/icons-material";
-
+import { useTranslation } from "react-i18next";
 interface Props {
   quiz: Quiz;
 }
 
 const QuizCard = ({ quiz }: Props) => {
+  const { t } = useTranslation(["common", "home"]);
   // Calculate days remaining
   const daysRemaining = Math.ceil(
     (new Date(quiz.dueDate).getTime() - new Date().getTime()) /
@@ -109,9 +109,10 @@ const QuizCard = ({ quiz }: Props) => {
           }}
         >
           <Button
-            variant="contained"
+            variant="outlined"
             color="primary"
             href={quiz.link}
+            fullWidth
             sx={{
               borderRadius: 2,
               textTransform: "none",
@@ -122,7 +123,7 @@ const QuizCard = ({ quiz }: Props) => {
               },
             }}
           >
-            Start Quiz
+            {t("start quiz")}
           </Button>
         </Box>
       </CardContent>

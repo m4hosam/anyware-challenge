@@ -14,8 +14,10 @@ import { getAnnouncements } from "../store/slices/announcementSlice";
 import { getQuizzes } from "../store/slices/quizSlice";
 import AnnouncementCard from "./Announcements/AnnouncementCard";
 import QuizCard from "./Quizzes/QuizCard";
+import { useTranslation } from "react-i18next";
 
 const Dashboard = () => {
+  const { t } = useTranslation(["common", "home"]);
   const dispatch = useDispatch<AppDispatch>();
 
   const {
@@ -96,7 +98,7 @@ const Dashboard = () => {
                 mb: 2,
               }}
             >
-              Announcements
+              {t("announcements")}
             </Typography>
             {renderAnnouncementsSection()}
           </Box>
@@ -113,7 +115,7 @@ const Dashboard = () => {
                 mb: 2,
               }}
             >
-              Upcoming Quizzes
+              {t("upcoming quizzes")}
             </Typography>
             {renderQuizzesSection()}
           </Box>
