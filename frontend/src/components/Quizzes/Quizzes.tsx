@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Box, Typography, CircularProgress, Alert } from "@mui/material";
+import { Box, Typography, CircularProgress, Alert, Grid } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState, AppDispatch } from "../../store/store";
 import { getQuizzes } from "../../store/slices/quizSlice";
@@ -17,28 +17,60 @@ const Quizzes = () => {
 
   if (loading) {
     return (
-      <Box sx={{ display: "flex", justifyContent: "center", p: 3 }}>
-        <CircularProgress />
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          minHeight: 400,
+        }}
+      >
+        <CircularProgress size={28} />
       </Box>
     );
   }
 
   if (error) {
     return (
-      <Box sx={{ p: 3 }}>
-        <Alert severity="error">{error}</Alert>
+      <Box sx={{ p: 3, maxWidth: 800, mx: "auto" }}>
+        <Alert severity="error" sx={{ borderRadius: 2 }}>
+          {error}
+        </Alert>
       </Box>
     );
   }
 
   return (
-    <Box sx={{ p: 3 }}>
-      <Typography variant="h4" gutterBottom>
-        Quizzes
-      </Typography>
-      {quizzes.map((quiz) => (
-        <QuizCard key={quiz._id} quiz={quiz} />
-      ))}
+    <Box sx={{ p: 3, maxWidth: 1200, mx: "auto" }}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          mb: 4,
+        }}
+      >
+        <Typography
+          variant="h5"
+          sx={{
+            fontWeight: 600,
+            color: "text.primary",
+          }}
+        >
+          Quizzes
+        </Typography>
+        <Typography color="text.secondary">
+          {quizzes.length} {quizzes.length === 1 ? "quiz" : "quizzes"} available
+        </Typography>
+      </Box>
+
+      <Grid container spacing={3}>
+        {quizzes.map((quiz) => (
+          <Grid item xs={12} md={6} key={quiz._id}>
+            <QuizCard quiz={quiz} />
+          </Grid>
+        ))}
+      </Grid>
     </Box>
   );
 };

@@ -23,7 +23,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div>
+    <div style={{ backgroundColor: "#00b4d8" }}>
       <Toolbar /> {/* This creates space for the AppBar */}
       <List>
         {menuItems.map((item) => (

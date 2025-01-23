@@ -18,7 +18,7 @@ const Announcements = () => {
   if (loading) {
     return (
       <Box sx={{ display: "flex", justifyContent: "center", p: 3 }}>
-        <CircularProgress />
+        <CircularProgress size={24} />
       </Box>
     );
   }
@@ -32,13 +32,26 @@ const Announcements = () => {
   }
 
   return (
-    <Box sx={{ p: 3 }}>
-      <Typography variant="h4" gutterBottom>
-        Announcements
-      </Typography>
-      {announcements.map((announcement) => (
-        <AnnouncementCard key={announcement._id} announcement={announcement} />
-      ))}
+    <Box sx={{ p: 3, maxWidth: 800, mx: "auto" }}>
+      <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
+        <Typography
+          variant="h5"
+          sx={{
+            fontWeight: 600,
+            color: "text.primary",
+          }}
+        >
+          Announcements
+        </Typography>
+      </Box>
+      <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+        {announcements.map((announcement) => (
+          <AnnouncementCard
+            key={announcement._id}
+            announcement={announcement}
+          />
+        ))}
+      </Box>
     </Box>
   );
 };
