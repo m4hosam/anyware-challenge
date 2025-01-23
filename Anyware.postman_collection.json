@@ -1,0 +1,352 @@
+{
+	"info": {
+		"_postman_id": "fbea0e5b-2a19-4ecd-967e-e6ff32b1da92",
+		"name": "Anyware",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16229368"
+	},
+	"item": [
+		{
+			"name": "Announcement",
+			"item": [
+				{
+					"name": "announcement",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/announcements",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"announcements"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "announcement By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/announcements/67911b52d68c7c1c0099e503",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"announcements",
+								"67911b52d68c7c1c0099e503"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "announcement create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\":{\r\n        \"name\": \"School Managment\",\r\n        \"image\": \"https://gsep.pepperdine.edu/blog/images/how-much-could-a-masters-degree-increase-your-teaching-salary.png\"\r\n    },\r\n    \"content\": \"Good morning, next week we have our first trip to London and we will discover more about the culture of the Britch people and their food. Get ready...\",\r\n    \"course\": \"Managment\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/announcements",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"announcements"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "announcement update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\":{\r\n        \"name\": \"mosdfdsf sdf hameddd\"\r\n    },\r\n    \"content\": \"Lohsdf we fwef wefl sdflkjwef wefjwe fnwneak\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/announcements/67911776223b70a4db402a8b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"announcements",
+								"67911776223b70a4db402a8b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "announcement update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"user\":{\r\n    //     \"name\": \"mosdfdsf sdf hadfsf sd fmeddd\"\r\n    // },\r\n    \"content\": \"Lohsdf we fwef wefl sdflkj dfsdf wef wefjwe fnwneak\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/announcements/67911776223b70a4db402a8b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"announcements",
+								"67911776223b70a4db402a8b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "announcement update Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/announcements/67911b52d68c7c1c0099e503",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"announcements",
+								"67911b52d68c7c1c0099e503"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quiz",
+			"item": [
+				{
+					"name": "quiz",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/quizzes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"quizzes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "quiz by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Exam pro\",\r\n    \"course\": \"Math\",\r\n    \"topic\": \"AUsdf jsdfk j\",\r\n    \"dueDate\": \"2025-12-10\",\r\n    \"link\": \"http://localhost:5000/api/quizzes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/quizzes/67911f40659252f668111afb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"quizzes",
+								"67911f40659252f668111afb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add quiz",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"12-12 Assignment\",\r\n    \"course\": \"Arabic K12\",\r\n    \"topic\": \"الوحدة التانية - الامعاء\",\r\n    \"dueDate\": \"2023-12-20\",\r\n    \"link\": \"/api/quizzes/take\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/quizzes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"quizzes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update quiz",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Exssam\",\r\n    \"course\": \"Math\",\r\n    \"topic\": \"AUsdf jsdfk j\",\r\n    \"dueDate\": \"2025-12-10\",\r\n    \"link\": \"http://localhost:5000/api/quizzes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/quizzes/67911f40659252f668111afa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"quizzes",
+								"67911f40659252f668111afa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update quiz",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Exsddddsam\",\r\n    \"course\": \"Math\"\r\n    // \"topic\": \"AUsdf jsdfk j\",\r\n    // \"dueDate\": \"2025-12-10\"\r\n    // \"link\": \"http://localhost:5000/api/quizzes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/quizzes/67911f40659252f668111afa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"quizzes",
+								"67911f40659252f668111afa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add quiz Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/quizzes/67911f40659252f668111afa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"quizzes",
+								"67911f40659252f668111afa"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
