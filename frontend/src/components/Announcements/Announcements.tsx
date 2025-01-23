@@ -34,7 +34,10 @@ const Announcements = () => {
   }
 
   return (
-    <Box sx={{ p: 3, maxWidth: 800, mx: "auto" }}>
+    <Box
+      sx={{ p: 3, maxWidth: 800, mx: "auto" }}
+      data-testid="announcement-card"
+    >
       <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
         <Typography
           variant="h5"
