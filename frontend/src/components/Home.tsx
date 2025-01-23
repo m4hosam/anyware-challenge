@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login, logout } from "../store/slices/authSlice";
 import { RootState } from "../store/store";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -20,6 +21,12 @@ const Home = () => {
     }
   };
 
+  const { t, i18n } = useTranslation(["common", "home"]);
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
+
   return (
     <Box
       sx={{
@@ -33,7 +40,7 @@ const Home = () => {
       }}
     >
       <Typography variant="h3" gutterBottom>
-        Welcome to Learning Management System
+        {t("welcome")}
       </Typography>
       <Typography variant="h6" color="text.secondary" sx={{ mb: 4 }}>
         {isAuthenticated
@@ -48,6 +55,8 @@ const Home = () => {
       >
         {isAuthenticated ? "Logout" : "Login"}
       </Button>
+      <Button onClick={() => changeLanguage("en")}>English</Button>
+      <Button onClick={() => changeLanguage("ar")}>العربية</Button>
     </Box>
   );
 };

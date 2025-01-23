@@ -11,10 +11,10 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { Outlet, useNavigate } from "react-router-dom";
 import Sidebar from "./Sidebar";
-import Footer from "./Footer";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../store/slices/authSlice";
 import { RootState } from "../../store/store";
+import LanguageSelector from "./LanguageSelector";
 
 // Add to existing imports in Layout.tsx
 import Button from "@mui/material/Button";
@@ -61,7 +61,7 @@ export default function Layout() {
           ml: { sm: `${drawerWidth}px` },
         }}
       >
-        <Toolbar>
+        <Toolbar sx={{ backgroundColor: "#264653" }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -72,10 +72,11 @@ export default function Layout() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Learning Management System
+            Learning
           </Typography>
+          <LanguageSelector />
           {isAuthenticated && (
-            <Button color="inherit" onClick={handleLogout} sx={{ ml: "auto" }}>
+            <Button color="inherit" onClick={handleLogout}>
               Logout
             </Button>
           )}
@@ -134,7 +135,6 @@ export default function Layout() {
         <Toolbar /> {/* This creates space below the AppBar */}
         <Outlet />
       </Box>
-      <Footer />
     </Box>
   );
 }

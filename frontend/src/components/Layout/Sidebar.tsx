@@ -23,8 +23,8 @@ const Sidebar = () => {
   ];
 
   return (
-    <div style={{ backgroundColor: "#00b4d8" }}>
-      <Toolbar /> {/* This creates space for the AppBar */}
+    <div style={{ backgroundColor: "#2a9d8f", height: "100vh" }}>
+      <Toolbar />
       <List>
         {menuItems.map((item) => (
           <ListItem key={item.text} disablePadding>
@@ -32,8 +32,17 @@ const Sidebar = () => {
               component={NavLink}
               to={item.path}
               sx={{
+                ":hover": { color: "#99d98c" },
+                color: "white",
+                "& .MuiListItemIcon-root": {
+                  color: "white",
+                },
                 "&.active": {
                   backgroundColor: "white",
+                  color: "black",
+                  "& .MuiListItemIcon-root": {
+                    color: "black",
+                  },
                   "& .MuiListItemText-primary": {
                     fontWeight: "bold",
                   },

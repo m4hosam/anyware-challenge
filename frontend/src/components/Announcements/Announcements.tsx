@@ -4,8 +4,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { RootState, AppDispatch } from "../../store/store";
 import { getAnnouncements } from "../../store/slices/announcementSlice";
 import AnnouncementCard from "./AnnouncementCard";
+import { useTranslation } from "react-i18next";
 
 const Announcements = () => {
+  const { t } = useTranslation(["common", "home"]);
   const dispatch = useDispatch<AppDispatch>();
   const { announcements, loading, error } = useSelector(
     (state: RootState) => state.announcements
@@ -41,7 +43,7 @@ const Announcements = () => {
             color: "text.primary",
           }}
         >
-          Announcements
+          {t("announcements")}
         </Typography>
       </Box>
       <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>

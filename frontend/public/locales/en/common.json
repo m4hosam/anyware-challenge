@@ -1,0 +1,9 @@
+{
+    "appName": "Learning Management System",
+    "login": "Login",
+    "logout": "Logout",
+    "welcome": "Welcome to LMS",
+    "dashboard": "Dashboard",
+    "announcements": "Announcements",
+    "quizzes": "Quizzes"
+  }
