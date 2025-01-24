@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     container_name: anyware-backend
     ports:
-      - "5000:5000"
+      - "5050:5050"
     environment:
       - MONGO_URI=mongodb://mongo:27017/anyware
     depends_on:
@@ -23,10 +23,10 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
       args:
-        VITE_API_URL: 'http://localhost:5000/api'
+        VITE_API_URL: 'http://localhost:5050/api'
     container_name: anyware-frontend
     ports:
-      - "8080:8080"
+      - "7070:7070"
     depends_on:
       - backend
 volumes:

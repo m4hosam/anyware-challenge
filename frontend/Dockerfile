@@ -28,7 +28,7 @@ RUN npm run build
 RUN npm install -g serve
 
 # The app binds to port 7000
-EXPOSE 8080
+EXPOSE 7070
 
 # Run the app
 CMD [ "npm", "run", "preview" ]

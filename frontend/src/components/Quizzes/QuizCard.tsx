@@ -5,7 +5,6 @@ import {
   Button,
   Box,
   Chip,
-  IconButton,
 } from "@mui/material";
 import { Quiz } from "../../types/types";
 import { format } from "date-fns";
@@ -16,17 +15,6 @@ interface Props {
 
 const QuizCard = ({ quiz }: Props) => {
   const { t } = useTranslation(["common", "home"]);
-  // Calculate days remaining
-  const daysRemaining = Math.ceil(
-    (new Date(quiz.dueDate).getTime() - new Date().getTime()) /
-      (1000 * 3600 * 24)
-  );
-
-  const getDueDateColor = () => {
-    if (daysRemaining <= 1) return "error";
-    if (daysRemaining <= 3) return "warning";
-    return "success";
-  };
 
   return (
     <Card

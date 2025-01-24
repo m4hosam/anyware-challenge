@@ -1,13 +1,6 @@
 // Dashboard.tsx
 import { useEffect } from "react";
-import {
-  Box,
-  Typography,
-  CircularProgress,
-  Alert,
-  Grid,
-  Paper,
-} from "@mui/material";
+import { Box, Typography, CircularProgress, Alert, Grid } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState, AppDispatch } from "../store/store";
 import { getAnnouncements } from "../store/slices/announcementSlice";
