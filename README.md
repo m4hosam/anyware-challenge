@@ -14,6 +14,13 @@ A full-stack Learning Management System (LMS) with a React frontend, Express.js 
 - 🔄 State management
 - 🐳 Docker support for easy deployment
 
+## Demo
+
+You can access the demo for the project from:
+
+- frontend: https://anyware-test.vercel.app/
+- backend: https://anyware-challenge-2.onrender.com/api/announcements
+
 ## Prerequisites
 
 - Node.js (v18 or later)
