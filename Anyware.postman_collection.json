@@ -15,12 +15,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/api/announcements",
-							"protocol": "http",
+							"raw": "{{base_url}}/api/announcements",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "5000",
 							"path": [
 								"api",
 								"announcements"
@@ -35,12 +33,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/api/announcements/67911b52d68c7c1c0099e503",
-							"protocol": "http",
+							"raw": "{{base_url}}/api/announcements/67911b52d68c7c1c0099e503",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "5000",
 							"path": [
 								"api",
 								"announcements",
@@ -65,12 +61,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/announcements",
-							"protocol": "http",
+							"raw": "{{base_url}}/api/announcements",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "5000",
 							"path": [
 								"api",
 								"announcements"
@@ -80,7 +74,7 @@
 					"response": []
 				},
 				{
-					"name": "announcement update",
+					"name": "announcement update put",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -94,12 +88,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/announcements/67911776223b70a4db402a8b",
-							"protocol": "http",
+							"raw": "{{base_url}}/api/announcements/67911776223b70a4db402a8b",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "5000",
 							"path": [
 								"api",
 								"announcements",
@@ -110,7 +102,7 @@
 					"response": []
 				},
 				{
-					"name": "announcement update",
+					"name": "announcement update patch",
 					"request": {
 						"method": "PATCH",
 						"header": [],
@@ -124,12 +116,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/announcements/67911776223b70a4db402a8b",
-							"protocol": "http",
+							"raw": "{{base_url}}/api/announcements/67911776223b70a4db402a8b",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "5000",
 							"path": [
 								"api",
 								"announcements",
@@ -154,12 +144,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/announcements/67911b52d68c7c1c0099e503",
-							"protocol": "http",
+							"raw": "{{base_url}}/api/announcements/67911b52d68c7c1c0099e503",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "5000",
 							"path": [
 								"api",
 								"announcements",
@@ -180,12 +168,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/api/quizzes",
-							"protocol": "http",
+							"raw": "{{base_url}}/api/quizzes",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "5000",
 							"path": [
 								"api",
 								"quizzes"
@@ -195,7 +181,7 @@
 					"response": []
 				},
 				{
-					"name": "quiz by id",
+					"name": "quiz By ID",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -212,12 +198,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/quizzes/67911f40659252f668111afb",
-							"protocol": "http",
+							"raw": "{{base_url}}/api/quizzes/67911f40659252f668111afb",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "5000",
 							"path": [
 								"api",
 								"quizzes",
@@ -228,13 +212,13 @@
 					"response": []
 				},
 				{
-					"name": "add quiz",
+					"name": "quiz create",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"12-12 Assignment\",\r\n    \"course\": \"Arabic K12\",\r\n    \"topic\": \"الوحدة التانية - الامعاء\",\r\n    \"dueDate\": \"2023-12-20\",\r\n    \"link\": \"/api/quizzes/take\"\r\n}",
+							"raw": "{\r\n    \"title\": \"12-14 Assignment\",\r\n    \"course\": \"Arabic K13\",\r\n    \"topic\": \"الوحدة الثالثة - الامعاء\",\r\n    \"dueDate\": \"2025-01-01\",\r\n    \"link\": \"/api/quizzes/take\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -242,12 +226,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/quizzes",
-							"protocol": "http",
+							"raw": "{{base_url}}/api/quizzes",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "5000",
 							"path": [
 								"api",
 								"quizzes"
@@ -257,7 +239,7 @@
 					"response": []
 				},
 				{
-					"name": "update quiz",
+					"name": "quiz update put",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -271,12 +253,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/quizzes/67911f40659252f668111afa",
-							"protocol": "http",
+							"raw": "{{base_url}}/api/quizzes/67911f40659252f668111afa",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "5000",
 							"path": [
 								"api",
 								"quizzes",
@@ -287,7 +267,7 @@
 					"response": []
 				},
 				{
-					"name": "update quiz",
+					"name": "quiz update patch",
 					"request": {
 						"method": "PATCH",
 						"header": [],
@@ -301,12 +281,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/quizzes/67911f40659252f668111afa",
-							"protocol": "http",
+							"raw": "{{base_url}}/api/quizzes/67911f40659252f668111afa",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "5000",
 							"path": [
 								"api",
 								"quizzes",
@@ -317,7 +295,7 @@
 					"response": []
 				},
 				{
-					"name": "add quiz Copy",
+					"name": "quiz delete",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -331,12 +309,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/quizzes/67911f40659252f668111afa",
-							"protocol": "http",
+							"raw": "{{base_url}}/api/quizzes/67911f40659252f668111afa",
 							"host": [
-								"localhost"
+								"{{base_url}}"
 							],
-							"port": "5000",
 							"path": [
 								"api",
 								"quizzes",
