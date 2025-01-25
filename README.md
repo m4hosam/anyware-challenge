@@ -20,6 +20,7 @@ You can access the demo for the project from:
 
 - frontend: https://anyware-test.vercel.app/
 - backend: https://anyware-challenge-2.onrender.com/api/announcements
+- Video Demo: https://www.youtube.com/watch?v=m_jo6sbhfEQ
 
 ## Prerequisites
 
